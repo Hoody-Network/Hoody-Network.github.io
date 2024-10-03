@@ -1,4 +1,4 @@
-# Hoody.com Launches Hoody AI: Every AI, One Dashboard, Anonymous"
+# Hoody.com Launches Hoody AI: Every AI, One Dashboard, Anonymous
  
 **Ensures Confidentiality as AI Becomes Universally Accessible**
 
