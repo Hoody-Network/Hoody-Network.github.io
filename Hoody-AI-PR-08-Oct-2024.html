@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoody AI Launch Press Release</title>
+    <style>
+        @import url('./fonts.css');
+
+        :root {
+            --primary-color: #35383b;
+            --secondary-color: #fbfbfb;
+            --text-color: #333;
+            --accent-color: #ffb1d5;
+            --highlight-color: #c6f2ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            position: relative;
+            /* Ensure body is positioned relatively for absolute positioning of the logo */
+        }
+
+        @media screen and (max-width: 1199px) {
+            .background-logo {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 860px) {
+            .hoody-logo {
+                display: none;
+            }
+        }
+
+
+        .background-logo {
+            background-image: url(./hoody-bg.svg);
+            background-repeat: no-repeat;
+            background-position: -400px 240px;
+            background-size: 916px 896px;
+            opacity: 0.25;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 6px;
+        }
+
+
+
+        .logo {
+            min-width: 200px;
+            max-width: 400px;
+
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        ul {
+            margin: 0 0 20px 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .feature-list {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .thumbnail {
+            width: 100%;
+            /* Make the image responsive */
+            max-width: 800px;
+            /* Maximum width of the thumbnail */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin: 20px 0;
+            /* Space above and below the image */
+            border-radius: 8px;
+            /* Optional: Rounding the corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Optional: Soft shadow effect */
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 8px;
+            /* Rounded corners for the container */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 102%;
+            /* Slightly over 100% to hide borders */
+            height: 102%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+            /* Rounded corners for the iframe */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hide YouTube logo */
+        .video-container iframe::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: #000;
+            border-top-right-radius: 8px;
+            /* Rounded corner for the top-right */
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .play-icon {
+            color: white;
+            padding-bottom: 3px;
+            font-size: 32px;
+            margin-left: 5px;
+            /* Adjust for visual centering */
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        .play-button::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: pulse 2s infinite;
+        }
+
+        .video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .press-header {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .press-title {
+            flex: 1;
+        }
+
+        .press-release-img {
+            max-width: 294px;
+            /* Adjust as needed */
+            height: auto;
+        }
+
+        .hoody-logo {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hoody-ai-logo {
+            max-width: 206px;
+            /* Adjust as needed */
+            height: auto;
+        }
+    </style>
+
+    <link rel=icon type=image/png href=https://assets.hoody.com/assets/icons/favicons/hoody-favicon-16x16.png
+        sizes=16x16>
+    <link rel=icon type=image/png href=https://assets.hoody.com/assets/icons/favicons/hoody-favicon-32x32.png
+        sizes=32x32>
+    <link rel=icon type=image/png href=https://assets.hoody.com/assets/icons/favicons/hoody-favicon-96x96.png
+        sizes=96x96>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="press-header">
+            <div class="press-title">
+                <img src="./press-release.svg" alt="PRESS RELEASE" class="press-release-img">
+            </div>
+            <div class="hoody-logo">
+                <img src="./logo-hoody-ai.svg" alt="Hoody AI" class="hoody-ai-logo">
+            </div>
+        </header>
+
+        <!-- Rest of your content here -->
+    </div>
+
+    <div class="background-logo"></div> <!-- New background logo div -->
+
+    <div class="container">
+
+        <div class="text-container">
+            <h2>Hoody AI: Every AI, One Dashboard, Anonymous</h2>
+            <p><strong>Ensures Confidentiality as AI Becomes Universally Accessible</strong></p>
+            <p><strong>October 8, 2024</strong> — <a href="https://hoody.com" target=_blank>Hoody.com</a>, an innovator
+                in privacy technologies known for launching Hoody BETA in 2023, is proud to announce a new flagship
+                product: <span class="highlight">Hoody AI</span>. This groundbreaking platform redefines how users
+                interact with artificial intelligence by providing private, anonymous, and encrypted access to top-tier
+                AI models, including the latest OpenAI Strawberry, Claude Sonnet, Meta LLaMA3, and Google Gemini Pro.
+            </p>
+        </div>
+
+    </div>
+    <div class="container">
+        <h2>A New Era of Private AI Usage</h2>
+        <div class="feature-list">
+            <ul>
+                <li><strong>Free to Use:</strong> Hoody AI is available for free with generous usage limits, with
+                    premium plans offering unlimited access and more models.</li>
+                <li><strong>Anonymous Access:</strong> 30-second signup with absolutely zero information required.
+                    Users' prompts are inaccessible to anyone else.</li>
+                <li><strong>One Interface:</strong> Interact simultaneously with top models (OpenAI, Anthropic, Google,
+                    Meta...) through a single, feature-rich dashboard designed for ultimate convenience.</li>
+                <li><strong>Voice Support:</strong> Speak directly to any AI using your microphone, and let AI respond
+                    to you with adjustable voice settings.</li>
+                <li><strong>Image & Document Analysis:</strong> Upload files and ask questions about them, extract
+                    information, and even summarize documents.</li>
+            </ul>
+        </div>
+        <br />
+        <p>Hoody AI has quickly gained <strong>popularity</strong> following its launch, securing a spot as one of the
+            <span class="highlight">Top 2 weekly products on Product Hunt</span>, with more than <span
+                class="highlight">10,000 anonymous Keys created</span> in the same week. This achievement highlights
+            Hoody AI's value and its unique approach to addressing the new challenges emerging from the democratization
+            of AI.
+        </p>
+
+        <div class="video-container">
+            <img src="https://assets.hoody.com/assets/images/hoody-ai/screen.jpg" alt="Video Thumbnail"
+                class="video-thumbnail">
+            <button class="play-button">
+                <span class="play-icon">▶</span>
+            </button>
+            <div class="video-wrapper" style="display: none;">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/IgY_ADAarEw?autoplay=1&controls=0&loop=1&playlist=IgY_ADAarEw&mute=0&rel=0&modestbranding=1&showinfo=0&start=14&enablejsapi=1"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <h2 style="margin-top:30px;">About Hoody.com</h2>
+        <p>Hoody.com is developing unique privacy solutions, including <strong>Per-App VPN</strong>, <strong>Browsing
+                Containers</strong>, <strong>Bulletproof Proxies/VPNS</strong>, <strong><a href="https://hoody.com/ai"
+                    target="_blank">Hoody AI</a></strong>, and an anonymous sign-up mechanism called <strong>Hoody
+                Key</strong>, with the sole purpose of delivering real privacy to everyday users.</p>
+        <p>Since its foundation, the company has also been carrying the mission of debunking the misleading narratives
+            propagated by dominant players, which claim to offer anonymity, through an educative Privacy Hub publishing
+            privacy news and reports. Hoody.com demonstrates that standard VPNs <strong>fall short of
+                protecting</strong> users' privacy and provides tools that counteract these shortcomings.</p>
+
+        <div class="contact">
+            <h3>Press Contact</h3>
+            <p><strong>David Wells</strong><br>
+                Public Relations, Hoody.com<br>
+                Email: <a href="mailto:pr@hoody.com">pr@hoody.com</a><br>
+                Website: <a href="https://hoody.com">hoody.com</a></p>
+        </div>
+
+        <footer>
+            <h3>Notes to Editors</h3>
+            <p><a href="https://hoody.com/" target="_blank">Hoody.com</a> is available for interviews and can provide additional information upon request.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const playButton = document.querySelector('.play-button');
+            const videoContainer = document.querySelector('.video-container');
+            const thumbnail = document.querySelector('.video-thumbnail');
+            const videoWrapper = document.querySelector('.video-wrapper');
+
+            playButton.addEventListener('click', () => {
+                thumbnail.style.display = 'none';
+                playButton.style.display = 'none';
+                videoWrapper.style.display = 'block';
+
+                // Create a new iframe to force autoplay
+                const iframe = videoWrapper.querySelector('iframe');
+                const newIframe = iframe.cloneNode();
+                newIframe.src += "&autoplay=1";
+                iframe.parentNode.replaceChild(newIframe, iframe);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
